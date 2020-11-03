@@ -4,7 +4,7 @@ import time
 import numpy as np
 from sklearn import metrics
 from math import sqrt
-from sklearn.model_selection import train_test_split\
+from sklearn.model_selection import train_test_split
 
 def diffa(y, ypred,x):
     return (y-ypred)*(-x)
