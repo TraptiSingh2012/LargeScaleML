@@ -86,6 +86,7 @@ def batch_gd(X_train, y_train):
 	          param1 = a
 	          param2 = b
 
+	    #Complete the function to obtain the plots and RMSE
 
 def minibatch_gd():
 	pass
