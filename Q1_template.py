@@ -68,16 +68,16 @@ def batch_gd(X_train, y_train):
 	    loss = loss/len(X_train)
 	    all_bgdloss.append(loss)
 	    all_ep.append(ep)
-	    plt.plot(all_ep, all_bgdloss, color = 'red')
-	    plt.title('BGD')
-	    plt.xlabel("Epoch")
-	    plt.ylabel("loss")
 
 	    #parameters updated
 	    a = a - rate * all_da
 	    b = b - rate * all_db
 
-	    #Saving best parameters    
+	    for i in range(0, len(X_test)):
+	        y_pred = a*X_test[i] + b
+	        losst = losst + (y_test[i] - y_pred)*(y_test[i] - y_pred)/2
+
+	    #Saving best parameters for final reporting on test set   
 	    if ep==1:
 	        prevloss = losst
 	    else:
@@ -85,11 +85,6 @@ def batch_gd(X_train, y_train):
 	          prevloss=losst
 	          param1 = a
 	          param2 = b
-
-	    if ep % 10 == 0:
-	        print("Epoch: ", ep, " Loss: ", loss)
-	        plt.show()
-	        plt.pause(0.01)
 
 
 def minibatch_gd():

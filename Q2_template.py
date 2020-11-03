@@ -79,6 +79,7 @@ def main():
 	    train_loss.append(train(model, device, train_loader, optimizer, epoch))
 	    test_loss.append(test(model, device, test_loader))
 	    epochs.append(epoch)
+        #keep saving the model for which test_loss is the least and use it for final reporting
 
 
 if __name__=='__main__':
