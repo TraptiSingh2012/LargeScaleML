@@ -44,7 +44,7 @@ for i in range(0, len(x)):
 X_train, X_test, y_train, y_test = train_test_split(x, y, test_size=0.3,random_state=109)
 
 
-def batch_gd(X_train, y_train):
+def batch_gd(X_train, y_train, X_test, y_test):
 
 	a = 10.0
 	b = -20.0
@@ -102,7 +102,7 @@ def adam_gd():
 
 def main():
 
-	batch_gd(X_train, y_train)
+	batch_gd(X_train, y_train, X_test, y_test)
 
 if __name__=='__main__':
 	main()
